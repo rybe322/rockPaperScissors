@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<script>
+computerPlay = function(){
+  gameArray = ['rock', 'paper', 'scissors'];
+  return gameArray[Math.floor(Math.random()*3)]
+}
+playerPlay = function(){
+  return prompt("Choice:  ")
+}
+playerTie = () => console.log("Tie game")
+playerWin = () => console.log("Player win")
+playerLose = () => console.log("Player lose")
+gamePlay = function(){
+  playerChoice = playerPlay().toLowerCase();
+  computerChoice = computerPlay();
+  console.log(`Player: ${playerChoice}\nComputer: ${computerChoice}`)
+  if(playerChoice == computerChoice){
+    playerTie()
+  }else{
+    if(playerChoice == 'rock'){
+      computerChoice == 'scissors' ? console.log('Player Wins') : console.log('Computer Wins')
+    }
+    if(playerChoice == 'paper'){
+      computerChoice == 'scissors' ? playerWin() : playerLose()
+    }
+    if(playerChoice == 'scissors'){
+      computerChoice == 'paper' ? playerWin() : playerLose()
+    }
+   }  
+} 
+</script>
+</body>
+</html>
+
